@@ -57,7 +57,8 @@
 			</div><!-- end actions -->
 		</div><!-- end col md 3 -->
 
-		<div class="col-md-9">			
+		<div class="col-md-9">
+			<div style="overflow-x:auto">
 			<table cellpadding="0" cellspacing="0" class="table table-striped">
 				<tbody>
 				<?php
@@ -83,6 +84,7 @@
 				?>
 				</tbody>
 			</table>
+			</div>
 
 		</div><!-- end col md 9 -->
 
@@ -95,6 +97,7 @@ if (!empty($associations['hasOne'])) :
 	<div class="row related">
 		<div class="col-md-12">
 			<h3><?php echo "<?php echo __('Related " . Inflector::humanize($details['controller']) . "'); ?>"; ?></h3>
+			<div style="overflow-x:auto">
 			<table class="table table-striped">
 			<tbody>
 		<?php echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
@@ -109,6 +112,7 @@ if (!empty($associations['hasOne'])) :
 		<?php echo "<?php endif; ?>\n"; ?>
 			</tbody>
 			</table>
+			</div>
 			<div class="actions">
 				<?php echo "<?php echo \$this->Html->link(__('Edit " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$singularVar}['{$alias}']['{$details['primaryKey']}']), array('escape' => false, 'class' => 'btn btn-default')); ?>\n"; ?>
 			</div>
@@ -132,6 +136,7 @@ foreach ($relations as $alias => $details):
 	<div class="col-md-12">
 	<h3><?php echo "<?php echo __('Related " . $otherPluralHumanName . "'); ?>"; ?></h3>
 	<?php echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
+	<div style="overflow-x:auto">
 	<table cellpadding = "0" cellspacing = "0" class="table table-striped">
 	<thead>
 	<tr>
@@ -162,6 +167,7 @@ echo "\t<?php endforeach; ?>\n";
 ?>
 	</tbody>
 	</table>
+	</div>
 <?php echo "<?php endif; ?>\n\n"; ?>
 	<div class="actions">
 		<?php echo "<?php echo \$this->Html->link(__('<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('escape' => false, 'class' => 'btn btn-default')); ?>"; ?> 
