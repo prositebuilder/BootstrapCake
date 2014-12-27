@@ -1,0 +1,13 @@
+.date select.form-control,
+.datetime select.form-control,
+.checkbox input.form-control
+{
+	width:auto;
+	height:auto;
+	display:inline;
+}
+.date label,  .datetime label
+{
+	width:auto;
+	display:block;
+}
